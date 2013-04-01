@@ -9,10 +9,13 @@ A more advanced app for creating a directory of students enrolled on the WDI cou
 * Add a remote called dmgarland and pull my latest code
 ```git remote add dmgarland https://github.com/dmgarland/StudentDirectory.git```
 
-```git pull dmgarland database```
 * Change to the database branch:
 
 ```git checkout database```
+
+* Pull my branch into your local branch
+```git pull dmgarland database```
+
 * To run the program: 
 
 ```ruby student_directory.rb```
