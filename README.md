@@ -18,3 +18,5 @@ A basic app for creating a directory of students enrolled on the WDI course.
 4. Make any other improvements you see fit
 5. Go around the class and ask your classmates to complete the information provided
 6. Check that you have a student_directory.yml file in your project folder.
+7. Use the magic code from the following gist to update your student directory program, so that I can read and write the Person objects into a YAML file. (You don't need to parse anything!)
+https://gist.github.com/dmgarland/5272911

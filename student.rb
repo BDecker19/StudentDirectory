@@ -48,7 +48,6 @@ while ((input = gets.strip.chomp) != 'q') do
     
   when 'l'
     # Pull in existing people from a YAML file
-    @directory += YAML.load_documents(File.open('student_directory.yml'))
   end
   
   # Append this person to our directory
@@ -58,9 +57,4 @@ while ((input = gets.strip.chomp) != 'q') do
   print "Enter Student or Instructor, q to save and quit: "
 end
 
-# Open a student_directory.yml YAML file and write it out on one line
-File.open('student_directory.yml', 'a') { |f|
-  @directory.compact.each do |person|
-    f.write(person.to_yaml)
-  end   
-} 
+# Open a student_directory.yml YAML file and write it out
