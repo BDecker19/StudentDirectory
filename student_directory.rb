@@ -18,7 +18,7 @@ begin
 
     case input
     when 'p'
-      # Find all the people who are in the database 
+       
       # and print out their information
 
     when 's'
