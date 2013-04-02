@@ -70,7 +70,7 @@ class Person
 
   def self.find_by_name(name)
     people = []
-    results = @@db.execute("select * from people where name = \"#{name}\"")
+    results = @@db.execute("select * from people where name LIKE '%#{name}%'")
     results.each do |db_object|
       people << Person.convert_DB_object(db_object)
     end
