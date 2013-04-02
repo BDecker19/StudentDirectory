@@ -59,18 +59,30 @@ class Person
   # stored in the database
   #
   def self.all    
+    # Build a SQL String that will lookup all people in the database
+    # Execute the SQL on @@db
+    # Iterate through each result, and build either a Student or an Instructor,
+    # filling in the information as you go.
+    # TODO - Return an array of either Student or Instructor objects, using information
+    # stored in the database, where the name matches the given argument
+
     people = []
     results = @@db.execute("select * from people")
     results.each do |db_object|
-      people << Person.convert_DB_object(db_object)
+      person << Person.convert_DB_object(db_object)
     end
     return people
 
   end
 
   def self.find_by_name(name)
+    # Build a SQL String that will lookup all people in the database
+    # where the name matches
+    # Execute the SQL on @@db
+    # Iterate through each result, and build either a Student or an Instructor,
+    # filling in the information as you go.
     people = []
-    results = @@db.execute("select * from people where name = \"#{name}\"")
+    results = @@db.execute("select * from people where name = #{name}")
     results.each do |db_object|
       people << Person.convert_DB_object(db_object)
     end
