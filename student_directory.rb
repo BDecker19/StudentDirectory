@@ -18,8 +18,12 @@ begin
 
     case input
     when 'p'
-       
-      # and print out their information
+      people = Person.all
+      puts "people array length: #{people.length}"
+      # x.each do |person|
+      #   puts "person: #{person}"
+      # end 
+      
 
     when 's'
       # Ask the user to enter a search term

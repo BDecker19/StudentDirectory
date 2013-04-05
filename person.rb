@@ -35,23 +35,20 @@ class Person
   end
 
   def self.convert_DB_object(db_object)
-    person = Person.create_person(db_object[1])
+    p = Person.create_person(db_object[1])
       
     # Set general attributes
-    person.id = db_object[0]
-    person.type = db_object[1]
-    person.name = db_object[2]
-    person.email = db_object[3]
+    p.id, p.type, p.name, p.email = db_object[0..3]
 
     # Set student/instructor specific attributes
-    if person.type == "Student"
-      person.reason_for_joining = db_object[4]
-    elsif person.type == "Instructor"
-      person.iq = db_object[5]
+    if p.type == "Student"
+      p.reason_for_joining = db_object[4]
+    elsif p.type == "Instructor"
+      p.iq = db_object[5]
     else puts "Error creating person!!" # should raise exception instead?
     end
 
-    return person
+    return p
 
   end
 
@@ -64,6 +61,7 @@ class Person
     results.each do |db_object|
       people << Person.convert_DB_object(db_object)
     end
+
     return people
 
   end
